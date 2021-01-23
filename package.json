@@ -2,11 +2,11 @@
   "name": "drone",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "init.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Rafael oliveira pires",
+  "license": "MIT"
 }
