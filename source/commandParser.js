@@ -1,52 +1,48 @@
 class ComandParser {
     constructor(drone){
         this.parseCommand = function parseCommand(line){
-            if(line == `takeoff`){
-                drone.onTakeoff()
-                return true
+
+            switch(line){
+                case "takeoff":
+                    drone.onTakeoff() 
+                    break
+                case "land":
+                    drone.onLand() 
+                    break
+                case "battery":
+                    drone.onBacttery() 
+                    break
+                case "flip":
+                    drone.onFlip() 
+                    break
             }
-            if(line == `land`){
-                drone.onLand()
-                return true
+            switch(line.startsWith()){
+                case "forward":
+                    const [, dist] = line.split(" ")
+                    drone.onForward(dist)
+                    break
+                case "back":
+                    const [, dist] = line.split(" ")
+                    drone.onBack(dist)
+                    break
+                case "right":
+                    const [, dist] = line.split(" ")
+                    drone.onRight(dist)
+                    break
+                case "left":
+                    const [, dist] = line.split(" ")
+                    drone.onLeft(dist)
+                    break
+                case "cw":
+                    const [, dist] = line.split(" ")
+                    drone.onCw(dist)
+                    break
+                case "ccw":
+                    const [, dist] = line.split(" ")
+                    drone.onCcw(dist)
+                    break
             }
-            if(line.startsWith() == `forward`){
-                const [, dist] = line.split(" ")
-                drone.onForward(dist)
-                return true
-            }
-            if(line.startsWith() == `back`){
-                const [, dist] = line.split(" ")
-                drone.onBack(dist)
-                return true
-            }
-            if(line.startsWith() == `right`){
-                const [, dist] = line.split(" ")
-                drone.onRight(dist)
-                return true
-            }
-            if(line.startsWith() == `left`){
-                const [, dist] = line.split(" ")
-                drone.onLeft(dist)
-                return true
-            }
-            if(line.startsWith() == `cw`){
-                const [, dist] = line.split(" ")
-                drone.onCw(dist)
-                return true
-            }
-            if(line.startsWith() == `ccw`){
-                const [, dist] = line.split(" ")
-                drone.onCcw(dist)
-                return true
-            }
-            if(line == `battery`){
-                drone.onBacttery(line)
-                return true
-            }
-            if(line == `flip`){
-                drone.onFlip(line)
-                return true
-            }
+
         }
     }
 }
